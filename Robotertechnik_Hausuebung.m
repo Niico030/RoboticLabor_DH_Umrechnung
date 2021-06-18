@@ -35,6 +35,7 @@ clc;
 
 % Eingabeaufforderung Nutzer:
 %q0:
+%q0_list=[0.7071 0.7071 0 0.7071 1 1];
 q0_list=[0.7071 0.7071 0 0.7071 1 1];
 %q1, q2, q3:
 qVek_list=[0.7071 0 0; 0.7071 0 0; 1 0 0; -0.7071 0 0; 0 0 0; 0 0 0];
@@ -44,9 +45,10 @@ rVek_list=[0 0 0; 0.56 0 0; 0.56 0 0; 0.56 0 -0.515; 0.56 0 -0.515; 0.56 0 -0.42
 
 %% Überprüfung Plausibilität Quaternion:
     % 1) q0, q1, q2, q3 müssen <= 1 sein
+    % 2) q0^2+q1^2+q2^2+q3^2 muss = 1 ergeben
     
 error_quaternion=0;
-    
+
 for i=1: length(qVek_list)
     if qVek_list(i,1) <= 1  && qVek_list(i,2) <= 1   && qVek_list(i,3) <= 1  % Überprüfung der der Quaternionen q1, q2, q3 <=1
     else
@@ -63,6 +65,18 @@ for i=1: length(q0_list)
         error_quaternion=1; % Plausibilität ist nicht gegeben (error_quaternionen==1)
         break; % Schleifenabbruch
     end
+end
+
+for i=1: length(q0_list) 
+   
+   AbbruchKrit(i)= q0_list(i)*q0_list(i)+qVek_list(i,1)*qVek_list(i,1)+qVek_list(i,2)*qVek_list(i,2)+qVek_list(i,3)*qVek_list(i,3) 
+   
+   if AbbruchKrit(i) ==0
+       disp('Bitte Eingabe der Quaternionen überprüfen, q0^2+q1^2+q2^2+q3^2 ist ungleich 1')
+        error_quaternion=1; % Plausibilität ist nicht gegeben (error_quaternionen==1)
+        break; % Schleifenabbruch
+   end
+    
 end
 
 %% Überprüfung Plausibilität Basisvektoren:
