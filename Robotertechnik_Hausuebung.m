@@ -41,6 +41,30 @@ qVek_list=[0.7071 0 0; 0.7071 0 0; 1 0 0; -0.7071 0 0; 0 0 0; 0 0 0];
 %Vektor zum Ursprung in Basiskoordinaten:
 rVek_list=[0 0 0; 0.56 0 0; 0.56 0 0; 0.56 0 -0.515; 0.56 0 -0.515; 0.56 0 -0.425];
 
+
+%% Überprüfung Plausibilität Quaternion:
+    % 1) q0, q1, q2, q3 müssen <= 1 sein
+    
+error_quaternion=0;
+    
+for i=1: length(qVek_list)
+    if qVek_list(i,1) <= 1  && qVek_list(i,2) <= 1   && qVek_list(i,3) <= 1  % Überprüfung der der Quaternionen q1, q2, q3 <=1
+    else
+        disp('Bitte Eingabe der Quaternionen überprüfen')
+        error_quaternion=1; % Plausibilität ist nicht gegeben (error_quaternionen==1)
+        break; % Schleifenabbruch
+    end
+end
+
+for i=1: length(q0_list)
+    if q0_list(i) <= 1 % Überprüfung der Quaternion q0 <=1
+    else
+        disp('Bitte Eingabe der Quaternionen überprüfen')
+        error_quaternion=1; % Plausibilität ist nicht gegeben (error_quaternionen==1)
+        break; % Schleifenabbruch
+    end
+end
+
 %% Überprüfung Plausibilität Basisvektoren:
     % Überprüfung mindestens eine Variable (x,y,z) der Basiskoordinaten muss
     % gleich mit dem vorherigen Link sein, damit Gelenke miteinerander
@@ -67,7 +91,7 @@ alpha_value_before=0;
 % length(q0_list) gibt Länge des Array aus und somit Anzahl der Link Objekte
 n_max= length(q0_list);  
 
-if error==0 % Wenn keine Probleme bei der Plausibilitätsprüfung aufgetreten sind (error == 0)
+if error==0 && error_quaternion==0 % Wenn keine Probleme bei der Plausibilitätsprüfung aufgetreten sind (error == 0 und error_quaternion)
     for i=1: n_max % for Schleife von Link 1 bis Link n_max
         disp('---------------------------')
         disp('Link Objekt: ') % Anzeigen der Nummer des Link Objektes 
