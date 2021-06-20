@@ -22,8 +22,9 @@ function [plausible, msg] = checkPlausibilityQuaternion(quaternionZeros,quaterni
     end
     
     for i=1: length(quaternionZeros) 
-       AbbruchKrit = quaternionZeros(i)^2+quaternionVektors(i,1)^2+quaternionVektors(i,2)^2+quaternionVektors(i,3)^2;
-       if AbbruchKrit == 0
+       AbbruchKrit = (quaternionZeros(i)^2) + (quaternionVektors(i,1)^2) + (quaternionVektors(i,2)^2) + (quaternionVektors(i,3)^2)
+       if AbbruchKrit <= 1.02 && AbbruchKrit >= 0.98
+       else
             msg = 'Bitte Eingabe der Quaternionen überprüfen!\nq0^2+q1^2+q2^2+q3^2 ist ungleich 1';
             plausible=0; % Plausibilität ist nicht gegeben (error_quaternionen==1)
             return; % Schleifenabbruch

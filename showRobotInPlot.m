@@ -7,6 +7,8 @@ function Robot = showRobotInPlot(tetha_i, d_i, a_i, alpha_i)
     Robot = SerialLink(L, 'name', 'Roboter Hausuebung SS21');
     
     % Plot des Roboters
-    Robot.plot(zeros(1,length(a_i)));
+    % Robot.plot(zeros(1,length(a_i)));
+    disp(tetha_i)
+    Robot.plot(tetha_i');
 end
 

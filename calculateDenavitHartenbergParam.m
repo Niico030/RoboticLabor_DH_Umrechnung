@@ -1,4 +1,4 @@
-function [a, d, alpha, tetha] = calculateDenavitHartenbergParam(basisVektorList,quaternionZeroList, quaternionVektorList)
+function [tetha, d, a, alpha] = calculateDenavitHartenbergParam(basisVektorList,quaternionZeroList, quaternionVektorList)
     % Startinitialiserung 
     d_value_before=0;
     a_value_before=0;
