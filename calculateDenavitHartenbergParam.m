@@ -1,12 +1,9 @@
 function [a, d, alpha, tetha] = calculateDenavitHartenbergParam(basisVektorList,quaternionZeroList, quaternionVektorList)
-%calculateDenavitHartenbergParam Summary of this function goes here
-%   Detailed explanation goes here
-    
     % Startinitialiserung 
     d_value_before=0;
     a_value_before=0;
     alpha_value_before=0;
-    
+    tetha_value_before = 0;
     for i=1:length(quaternionZeroList) % for Schleife von Link 1 bis Link n_max
         q0 = quaternionZeroList(i); % i-te Wert aus Vektor wird übernommen
         q  = quaternionVektorList(i,:); % i-te Zeile aus qVektor wird übernommen
@@ -16,7 +13,15 @@ function [a, d, alpha, tetha] = calculateDenavitHartenbergParam(basisVektorList,
         
         %Berechnet Rotationsmatrix aus Quaternionen
         RotMat = Q.R;
-
+        % Berechnung von a_i:
+        acos(RotMat(1,1));
+        if acos(RotMat(1,1)) == tetha_value_before % RotMat(1,1) entspricht cos(tetha)
+            tetha_i = 0;
+        else
+            tetha_i = abs(acos(RotMat(1,1)) - tetha_value_before);
+            tetha_value_before = acos(RotMat(1,1));
+        end
+        
         % Berechnung von a_i: 
             % Abstand zwischen der zi-1 und zi Achse entlang der xi Achse
         a_i = r(1); % a_i bekommt den Wert aus dem Vektor r zugewiesen
@@ -50,10 +55,11 @@ function [a, d, alpha, tetha] = calculateDenavitHartenbergParam(basisVektorList,
             alpha_value_before = acos(RotMat(3,3));
         end
         
+        % store value in the output
         a(i,1) = a_i;
         d(i,1) = d_i;
         alpha(i,1) = alpha_i;
-        tetha(i,1) = 0;
+        tetha(i,1) = tetha_i;
     end % for Schleifen Ende
 end
 
