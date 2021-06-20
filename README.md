@@ -5,11 +5,11 @@ Gruppe: Muhammad Hanif, Till Gostner, Nico Mayer
    
 Aufgabenstellung: 
 Erstellen Sie unter Verwendung der Denavit- Hartenberg Konvention einen Algorithmus:
-         - Bei dem der Nutzer, den Vektor zum Ursprung des i- ten Koordinatensystems in Basiskoordinaten angibt.
-         - Die Orientierung des i-ten Koordinatensystem relativ zur Bsais in Form von Quaternionen (Euler Rodrigues Parameter) angibt
-         - Diese Daten sollen vom Benutzer in Form einer Eingabeaufforderung abgefragt werden
-         - Die Denavit Hartenberg Parameter berechnet werden
-         - Der resultierende Roboter mit der Robotic Toolbox gezeichnet wird
+1. Bei dem der Nutzer, den Vektor zum Ursprung des i- ten Koordinatensystems in Basiskoordinaten angibt.
+2. Die Orientierung des i-ten Koordinatensystem relativ zur Bsais in Form von Quaternionen (Euler Rodrigues Parameter) angibt
+3. Diese Daten sollen vom Benutzer in Form einer Eingabeaufforderung abgefragt werden
+4. Die Denavit Hartenberg Parameter berechnet werden
+5. Der resultierende Roboter mit der Robotic Toolbox gezeichnet wird
         
 Vorgehensweise zum Lösen der Hausübung 
 
