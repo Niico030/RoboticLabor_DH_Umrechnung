@@ -1,21 +1,17 @@
 # RoboticLabor_DH_Umrechnung
 
 Verpflichtende Hausübung Robotertechnik SS21 
-%% Gruppe: Muhammad Hanif, Till Gostner, Nico Mayer
+Gruppe: Muhammad Hanif, Till Gostner, Nico Mayer
    
-% Aufgabenstellung: 
-% Erstellen Sie unter Verwendung der Denavit- Hartenberg Konvention einen Algorithmus:
-        % - Bei dem der Nutzer, den Vektor zum Ursprung des i- ten
-        %   Koordinatensystems in Basiskoordinaten angibt.
-        % - Die Orientierung des i-ten Koordinatensystem relativ zur Bsais
-        %   in Form von Quaternionen (Euler Rodrigues Parameter) angibt
-        % - Diese Daten sollen vom Benutzer in Form einer
-        %   Eingabeaufforderung abgefragt werden
-        % - Die Denavit Hartenberg Parameter berechnet werden
-        % - Der resultierende Roboter mit der Robotic Toolbox gezeichnet
-        %   wird
+Aufgabenstellung: 
+Erstellen Sie unter Verwendung der Denavit- Hartenberg Konvention einen Algorithmus:
+         - Bei dem der Nutzer, den Vektor zum Ursprung des i- ten Koordinatensystems in Basiskoordinaten angibt.
+         - Die Orientierung des i-ten Koordinatensystem relativ zur Bsais in Form von Quaternionen (Euler Rodrigues Parameter) angibt
+         - Diese Daten sollen vom Benutzer in Form einer Eingabeaufforderung abgefragt werden
+         - Die Denavit Hartenberg Parameter berechnet werden
+         - Der resultierende Roboter mit der Robotic Toolbox gezeichnet wird
         
-%% Vorgehensweise zum Lösen der Hausübung 
+Vorgehensweise zum Lösen der Hausübung 
 
     % 1) Eingabeaufforderung der Quaternionen
     % 2) Eingabeaufforderung der Vektoren zum Ursprung 
