@@ -1,7 +1,7 @@
 # RoboticLabor_DH_Umrechnung
 
 Verpflichtende Hausübung Robotertechnik SS21 
-% Gruppe: Muhammad Hanif, Till Gostner, Nico Mayer
+%% Gruppe: Muhammad Hanif, Till Gostner, Nico Mayer
    
 % Aufgabenstellung: 
 % Erstellen Sie unter Verwendung der Denavit- Hartenberg Konvention einen Algorithmus:
