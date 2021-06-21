@@ -17,12 +17,18 @@ Vorgehensweise zum Lösen der Hausübung
 2. Eingabeaufforderung der Vektoren zum Ursprung 
 3. Plausibilitätsprüfung der vom Benutzer eingegeben Werte
    1. Überprüfung Plausibilität Basisvektoren:
+   
       Überprüfung mindestens eine Variable (x,y,z) der Basiskoordinaten muss gleich mit dem vorherigen Link sein, damit Gelenke miteinerander verbunden sind
+      
    2. Überprüfung Plausibilität Quaternion:
+
       a. q0, q1, q2, q3 müssen <= 1 sein
+      
       b. q0^2+q1^2+q2^2+q3^2 muss = 1 ergeben
+      
 4. Aus den Quaternionen die Rotationsmatrix berechnen => aus RotMat lassen sich theta und alpha bestimmen
 5. Aus den Vektoren lassen sich die Abstände a und d berechenen => RotMat und Vektoren zur Bestimmung der Denavit Hartenbergparameter
-6. Einzelne Linkobjekte werden erstellt
-7. Erstellen von Seriallink Objekt des Robotermodells
-8. Roboter plotten
+6. Homogene Matrix wird nicht berechnet, da RotMat und Vektoren ausreichend sind
+7. Einzelne Linkobjekte werden erstellt
+8. Erstellen von Seriallink Objekt des Robotermodells
+9. Roboter plotten
